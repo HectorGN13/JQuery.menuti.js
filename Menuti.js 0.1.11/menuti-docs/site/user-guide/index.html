@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>User Guide - JQuery.menuti.js</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "User Guide";
+    var mkdocs_page_input_path = "user-guide.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> JQuery.menuti.js</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Introduction</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">User Guide</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#guia-de-usuario">Guía de usuario</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#cargar-menutijs-en-nuestro-script">Cargar Menuti.js en nuestro script</a></li>
+        
+            <li><a class="toctree-l3" href="#metodos-y-utilizacion">Métodos y utilización.</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../style-guide/">Style Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about.md">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">JQuery.menuti.js</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>User Guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/HectorGN13/JQuery.menuti.js/edit/master/docs/user-guide.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="guia-de-usuario">Guía de usuario</h1>
+<p>Guía rápida para comenzar a usar Menuti.js</p>
+<h2 id="cargar-menutijs-en-nuestro-script">Cargar Menuti.js en nuestro script</h2>
+<p>Carga menuti.js dentro de tu script utilizando la funcion <code>$().menuti('init')</code>.</p>
+<pre><code>&lt;!--Example code--&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    $(document).ready(function () {
+        $().menuti('init');
+    });
+&lt;/script&gt;
+</code></pre>
+
+<p>Por defecto menuti.js inyectara el codigo html dentro de un <code>&lt;div&gt;</code> con id "content-menu". Por ello es necesario crear previamente detro de nuestro archivo .html un elemento div con id="content-menu".</p>
+<p><code>&lt;div id="content-menu"&gt;&lt;/div&gt;</code></p>
+<p>A continuacion se muestra un pequeño fragmento de código a modo de ejemplo:</p>
+<pre><code>&lt;body&gt;
+    &lt;header&gt;
+        &lt;div id=&quot;content-menu&quot; class=&quot;content-menu&quot;&gt;&lt;/div&gt;
+    &lt;/header&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>Aunque también puedes colocar los menus donde lo necesites, siempre y cuando previamente modifiques el contenido dentro de tu archivo .html y luego indiques por parametros a la función init donde deseas crear tu menú. </p>
+<p>A continuación se muestra un ejemplo de como realizarlo.</p>
+<pre><code>&lt;!--Archivo html--&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;div id=&quot;example-container&quot;&gt;&lt;/div&gt;
+    &lt;/header&gt;
+&lt;/body&gt;
+</code></pre>
+
+<pre><code>//Archivo js
+
+//Variable de configuración
+var initSettings = {
+        menuID : &quot;example-container&quot;
+};
+
+$().menuti('init', initSettings);
+
+</code></pre>
+
+<hr />
+<h2 id="metodos-y-utilizacion">Métodos y utilización.</h2>
+<h3 id="init">init</h3>
+<p>Este método inicia menuti.js y deja todo preparado para que podamos añadir secciones a nuestro menú.
+Cuenta con dos parámetros que podremos añadir a la variable settings.</p>
+<ul>
+<li><strong>responsive</strong></li>
+</ul>
+<p>Este parámetro nos permitirá la creación de un responsivo. </p>
+<p>Cuenta con dos valores: <code>true</code> por defecto, o <code>false</code> en el caso que no queramos que nuestro menú se comporte de forma responsiva.</p>
+<ul>
+<li><strong>menuID</strong></li>
+</ul>
+<p>Este parámetro se utiliza para indicar donde queremos colocar nuestro menú.</p>
+<p>*Recuerda que deberemos colocar nuestro menú dentro de etiquetas <code>&lt;div&gt;</code> y su id será el valor que hemos pasado por parámetro.</p>
+<p>Por defecto el valor de <strong>menuID</strong> es "content-menu".</p>
+<hr />
+<pre><code>//Archivo js
+
+//Variable de configuración
+var initSettings = {
+        responsive: false,
+        menuID : &quot;example-container&quot;
+};
+
+$().menuti('init', initSettings);
+
+</code></pre>
+
+<h3 id="addsection">addSection</h3>
+<p>Este es el método utilizado para agregar secciones a nuestro menú.</p>
+<p>Cuenta con dos claves que podemos añadir a nuestra variable settings.</p>
+<ul>
+<li><strong>elements</strong></li>
+</ul>
+<p>Esta clave es un array en el que añadiremos todos los elementos de nuestro menú.</p>
+<p>Cuando nuestro menú esté creado el id de cada elemento será el mismo aunque en minúsculas y con los espacios omitidos.</p>
+<ul>
+<li><strong>position</strong></li>
+</ul>
+<p>Sirve para indicar a nuestro pluging donde queremos añadir nuestro menú si antes o despues. Este parametro podría sernos útil si en un futuro queremos añadir mas elementos a nuestro menú por lo que podremos elegir su posición.</p>
+<p>Los dos parametros posibles son los siguientes <code>after</code> (por defecto) o <code>before</code>.</p>
+<hr />
+<pre><code>//Archivo js
+
+//Variable de configuración
+var addSectionSettings = {
+        elements : [&quot; INICIO&quot;, &quot; SERVICIO&quot;, &quot; PRODUCTOS&quot;, &quot; BLOG&quot;, &quot; CONTACTOS&quot;],
+        position : &quot;after&quot;,
+};
+
+$().menuti('addSection', addSectionSettings);
+
+</code></pre>
+
+<h3 id="delsection">delSection</h3>
+<p>Este método sirve para eliminar secciones y subsecciones. </p>
+<p>Para utilizar este método es necesario pasarle por parametro el id del elemento <code>&lt;li&gt;</code> que queremos eliminar.</p>
+<hr />
+<pre><code>//Archivo js
+
+//Variable de configuración
+$().menuti('delSection', 'li_id');
+
+</code></pre>
+
+<h3 id="addsubsection">addSubsection</h3>
+<p>Este método añadirá una o varias subseccion/es al elemento que queramos, para ello deberemos pasar a la variable de configuración el elemento padre al que le deseamos agregar subsecciones y dichas subsecciones. Además podemos elegir la posición donde deseamos agregar los elementos.</p>
+<p>Las tres claves que debemos añadir a nuestra variable de configuración será las siguientes.</p>
+<ul>
+<li><strong>father</strong></li>
+</ul>
+<p>En esta clave deberemos colocar el "id" del elemento del menú al que le deseamos añadir nuestro submenú.</p>
+<p>Si no existe la página mostrará un mensaje de error indicando que ese elemento no se encuentra dentro del DOM.</p>
+<ul>
+<li><strong>elements</strong></li>
+</ul>
+<p>Esta clave es un array en el que añadiremos todos los elementos de nuestro submenú.</p>
+<p>Cuando nuestro submenú esté creado el id de cada elemento será el mismo aunque en minúsculas y con los espacios omitidos.</p>
+<ul>
+<li><strong>position</strong></li>
+</ul>
+<p>Sirve para indicar a nuestro pluging donde queremos añadir nuestro submenú, si antes o despues. Este parametro podría ser útil si en un futuro queremos añadir más elementos a nuestro submenú por lo que podremos elegir su posición dentro del menú.</p>
+<p>Los dos parametros posibles son los siguientes <code>after</code> (por defecto) o <code>before</code>.</p>
+<hr />
+<pre><code>//Archivo js
+
+//Variable de configuración
+var addSubsectionSettings = {
+        father : &quot;servicio&quot;,
+        elements : [&quot;Vehiculos de ocasión&quot;, &quot;Renting&quot;, &quot;Nuevos modelos&quot;],
+        position : &quot;after&quot;,
+};
+
+$().menuti('addSubsection', addSubsectionSettings);
+
+</code></pre>
+
+<h3 id="addlogo">addLogo</h3>
+<p>Este método sirve para añadir un logo a nuestro menú (si lo deseamos), para ello solo necesitaremos pasar por parametros la ruta del archivo img que deseamos colocar.</p>
+<hr />
+<pre><code>//Archivo js
+
+$().menuti('addLogo', &quot;./img/logo.jpg&quot;);
+
+</code></pre>
+
+<h3 id="addtitle">addTitle</h3>
+<p>Este método sirve para añadir un título a nuestro menú (si lo deseamos), para ello solo necesitaremos pasar por parametros el título que deseamos para nuestro documento.</p>
+<p>*El titulo será un <code>&lt;h2&gt;</code>.</p>
+<hr />
+<pre><code>//Archivo js
+
+$().menuti('addTitle', &quot;Empresa S.L.&quot;);
+
+</code></pre>
+
+<h3 id="addicon">addIcon</h3>
+<p>Con este método podemos añadir iconos a los elementos de nuestro menu. Para ello, antes necesitaremos tener en nuestro proyecto algún archivo .css de iconos (como por ejemplo fontello).</p>
+<p>Este método necesita dos parametros, el primero sería el "id" del elemento al que le queremos añadir el icono, el segundo la clase de dicho icono.</p>
+<p>* Hay que recordar que la clase del icono debe coincidir con la clase del archivo .css de iconos que hemos añadido a nuestro proyecto.</p>
+<hr />
+<pre><code>//Archivo js
+
+$().menuti('addIcon', &quot;home&quot;, &quot;icon-home&quot;);
+
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../style-guide/" class="btn btn-neutral float-right" title="Style Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/HectorGN13/JQuery.menuti.js/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../style-guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

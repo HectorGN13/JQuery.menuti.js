@@ -1,0 +1,13 @@
+site_name: JQuery.menuti.js
+repo_url: 'https://github.com/HectorGN13/JQuery.menuti.js'
+extra:
+  favicon: 'https://www.jquerymenuti.es/menuti-favicon.png'
+  social:
+    - type: 'github'
+      link: 'https://github.com/HectorGN13'
+theme: readthedocs
+nav:
+    - 'Introduction': 'index.md'
+    - 'User Guide': 'user-guide.md'
+    - 'Style Guide': 'style-guide.md'
+    - 'About': 'about.md'
